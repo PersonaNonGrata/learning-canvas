@@ -6,13 +6,13 @@
             [
              ;;{:type :rectangle :x 300 :y 300 :h 400 :w 400 :dx 5 :dy 2 :color "#ccc"}
              ;;{:type :rectangle :x 400 :y 400 :h 200 :w 200 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#333"}
-             ;;{:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :circle :x 100 :y 100 :radius 30 :dx 1 :dy 1 :color "#aaa"}
-             {:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
+             {:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#cac"}
+             {:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aba"}
+             {:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
+             {:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#efe"}
+             {:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#f5f"}
+             ;;{:type :circle :x 100 :y 100 :radius 30 :dx 5 :dy 2 :color "#aaa"}
+             ;;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
              ]
             ))
 
@@ -20,9 +20,9 @@
 
 (def canvas-dom (.getElementById js/document "c1"))
 
-(def upper-x (+ (:x (first @state)) (:w (first @state))))
+;;(def upper-x (+ (:x (first @state)) (:w (first @state))))
 
-(def upper-y (+ (:y (first @state)) (:h (first @state))))
+;;(def upper-y (+ (:y (first @state)) (:h (first @state))))
 
 (def context (.getContext canvas-dom "2d"))
 
@@ -33,9 +33,6 @@
 (set! (.-width canvas-dom) inner-width)
 
 (set! (.-height canvas-dom) inner-height)
-
-(defn update-lines [state]
-  state)
 
 (defn draw-circle [x y radius start-angle end-angle]
   (.beginPath context)
@@ -99,11 +96,11 @@
 (defn clear! []
   (.clearRect context 0 0 (.-innerWidth js/window) (.-innerHeight js/window)))
 
-(defn direction-change-x [state]
-  (map (fn [shape] (update shape :dx #(- %))) state))
+;; (defn direction-change-x [state]
+;;   (map (fn [shape] (update shape :dx #(- %))) state))
 
-(defn direction-change-y [state]
-  (map (fn [shape] (update shape :dy #(- %))) state))
+;; (defn direction-change-y [state]
+;;   (map (fn [shape] (update shape :dy #(- %))) state))
 
 (defn line-distance [start end]
   (let [xs (- (:x end) (:x start))
@@ -114,17 +111,17 @@
   (if (or (>= (:y (:end line)) (.-innerHeight js/window)) (<= (:end line 0)))
     (swap! state (merge (update line :dy #(- %))))))
 
-(defn update-rectangle-delta! [rect state]
-    (if (or (>= (+ (:x rect) (:w rect)) (.-innerWidth js/window)) (<= (:x rect) 0))
-      (swap! state direction-change-x))
-    (if (or (>= (+ (:y rect) (:h rect)) (.-innerHeight js/window)) (<= (:y rect) 0))
-      (swap! state direction-change-y)))
+;; (defn update-rectangle-delta! [rect state]
+;;     (if (or (>= (+ (:x rect) (:w rect)) (.-innerWidth js/window)) (<= (:x rect) 0))
+;;       (swap! state direction-change-x))
+;;     (if (or (>= (+ (:y rect) (:h rect)) (.-innerHeight js/window)) (<= (:y rect) 0))
+;;       (swap! state direction-change-y)))
 
-(defn update-deltas! [state]
-  (doseq [shape state]
-    (condp = (:type shape)
-      :rectangle (update-rectangle-delta! shape state)
-      :line (update-line-delta! shape state))))
+;; (defn update-deltas! [state]
+;;   (doseq [shape state]
+;;     (condp = (:type shape)
+;;       :rectangle (update-rectangle-delta! shape state)
+;;       :line (update-line-delta! shape state))))
 
 ;; (defn old-render! [state]  
 ;;   (do
@@ -146,10 +143,11 @@
                       (update-positions))]
     (clear!)
     (reset! state new-state)
-    (draw! @state))    
+    (draw! @state))
+   (.requestAnimationFrame js/window #(render! @state))
 )
 
-(.requestAnimationFrame js/window #(render! @state))
+(render! @state)
 
 ;;(render! state)
 
@@ -162,7 +160,7 @@
     ;; (.log js/console (str "offsetY" e.offsetY))
     ;; (.log js/console (str "event X" event.x))
     (.log js/console (str "event Y" event.y))
-    (render! @state)
+    ;;(render! @state)
     ;;(set! (. context -fillStyle) "#fff")          
     ;;(set! (. context -fillStyle) "#fff")
     ;;(.fillRect context (- event.x 15) (- event.y 15) 10 10)
@@ -170,13 +168,3 @@
 
 (events/listen js/window event-type/CLICK on-clek)
 
- ;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
-
-;;(def m {:1 {:value 0, :active false}, :2 {:value 0, :active false}})
-
-;;(update-in m [:1] assoc :value 1 :active true)
-;;=>{:1 {:value 1, :active true}, :2 {:value 0, :active false}}
-
-
-;; (defn grow-lines [state]
-;;   (map grow-line state))
