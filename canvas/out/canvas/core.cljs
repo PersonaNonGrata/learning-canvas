@@ -11,8 +11,8 @@
              ;;{:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
              ;;{:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
              ;;{:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#aaa"}
-             {:type :circle :x 100 :y 100 :radius 50 :dx 5 :dy 5 :color "#aaa"}
-             ;;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
+             ;;{:type :circle :x 100 :y 100 :radius 30 :dx 1 :dy 1 :color "#aaa"}
+             {:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
              ]
             ))
 
@@ -76,6 +76,23 @@
         )    
     ))
 
+(defn out-of-bounds? [shape direction]
+  (condp = direction
+    :horizontal (or (>= (+ (:x shape) (:w shape)) (.-innerWidth js/window)) (<= (:x shape) 0))
+    :vertical   (or (>= (+ (:y shape) (:h shape)) (.-innerHeight js/window)) (<= (:y shape) 0))
+    )
+  )
+
+(defn update-shape-delta [shape]
+  (if (out-of-bounds? shape :horizontal)
+    (update shape :dx #(- %))
+    (if (out-of-bounds? shape :vertical)
+      (update shape :dy #(- %))
+      shape)))
+
+(defn update-deltas [state]
+  (mapv update-shape-delta state))
+
 (defn update-positions [state]
   (mapv update-shape-position state))
 
@@ -109,20 +126,30 @@
       :rectangle (update-rectangle-delta! shape state)
       :line (update-line-delta! shape state))))
 
-(defn render! [state]  
-  (do
-    (clear!)     
-    (if (or (>= (+ (:x (first @state)) (:w (first @state))) (.-innerWidth js/window)) (<= (:x (first @state)) 0))
-      (swap! state direction-change-x))
-    (if (or (>= (+ (:y (first @state)) (:h (first @state))) (.-innerHeight js/window)) (<= (:y (first @state)) 0))
-      (swap! state direction-change-y))
-    (swap! state updater)
-    (draw! @state))
-  (.requestAnimationFrame js/window #(render! state))        
-    ;;(js/setInterval #(render! state) 5)
+;; (defn old-render! [state]  
+;;   (do
+;;     (clear!)     
+;;     (if (or (>= (+ (:x (first @state)) (:w (first @state))) (.-innerWidth js/window)) (<= (:x (first @state)) 0))
+;;       (swap! state direction-change-x))
+;;     (if (or (>= (+ (:y (first @state)) (:h (first @state))) (.-innerHeight js/window)) (<= (:y (first @state)) 0))
+;;       (swap! state direction-change-y))
+;;     (swap! state updater)
+;;     (draw! @state))
+;;   (.requestAnimationFrame js/window #(render! state))        
+;;     ;;(js/setInterval #(render! state) 5)
+;; )
+
+
+(defn render! [old-state]
+  (let [new-state (-> old-state
+                      (update-deltas)
+                      (update-positions))]
+    (clear!)
+    (reset! state new-state)
+    (draw! @state))    
 )
 
-(.requestAnimationFrame js/window #(render! state))
+(.requestAnimationFrame js/window #(render! @state))
 
 ;;(render! state)
 
@@ -135,7 +162,7 @@
     ;; (.log js/console (str "offsetY" e.offsetY))
     ;; (.log js/console (str "event X" event.x))
     (.log js/console (str "event Y" event.y))
-    ;;(render! state)
+    (render! @state)
     ;;(set! (. context -fillStyle) "#fff")          
     ;;(set! (. context -fillStyle) "#fff")
     ;;(.fillRect context (- event.x 15) (- event.y 15) 10 10)
@@ -144,10 +171,6 @@
 (events/listen js/window event-type/CLICK on-clek)
 
  ;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
-
-(defn stop-line [line]
-  )
-
 
 ;;(def m {:1 {:value 0, :active false}, :2 {:value 0, :active false}})
 
