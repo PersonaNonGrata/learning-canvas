@@ -6118,3 +6118,393 @@ notifying browser that file changed:  /canvas/core.js
 [0mCompiling "main.js" from ["src"]...
 [32mSuccessfully compiled "main.js" in 0.153 seconds.[0m
 notifying browser that file changed:  /canvas/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.109 seconds.[0m
+notifying browser that file changed:  out/goog/deps.js
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.235 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.211 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.182 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.187 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.171 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.183 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.171 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.191 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.159 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/start-angle at line 44 src/canvas/core.cljs
+WARNING: Use of undeclared Var canvas.core/end-angle at line 44 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.183 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.106 seconds.[0m
+notifying browser that file changed:  out/goog/deps.js
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: Unmatched delimiter ) on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 45, column 19
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.224 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.167 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.169 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/clear! at line 99 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.185 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.157 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: Invalid token: : on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 91, column 16
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: EOF while reading, starting at line 89 and column 1 on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 156, column 1
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: EOF while reading, starting at line 89 and column 1 on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 156, column 1
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.163 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.167 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.137 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.166 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.148 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.162 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.141 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.135 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.137 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.139 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.155 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.149 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.139 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.135 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.143 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.164 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.14 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.136 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.165 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.139 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/strue at line 105 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.166 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.157 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.154 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.157 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.147 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.154 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.166 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.145 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/-log at line 107 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.171 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.153 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.159 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.149 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.135 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.154 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.145 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.145 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.137 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.148 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.138 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.146 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.148 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.154 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.164 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.171 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.168 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.168 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.157 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.173 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.162 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.167 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.165 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.168 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.175 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.183 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.17 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.183 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.159 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: Unmatched delimiter ) on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 110, column 7
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.19 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.158 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.161 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.165 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.156 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.177 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.167 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.164 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.154 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.153 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js

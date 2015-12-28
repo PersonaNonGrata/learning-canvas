@@ -6,13 +6,16 @@
             [
              ;;{:type :rectangle :x 300 :y 300 :h 400 :w 400 :dx 5 :dy 2 :color "#ccc"}
              ;;{:type :rectangle :x 400 :y 400 :h 200 :w 200 :dx 5 :dy 2 :color "#aaa"}
-             {:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#cac"}
-             {:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aba"}
-             {:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
-             {:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#efe"}
-             {:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#f5f"}
-             ;;{:type :circle :x 100 :y 100 :radius 30 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
+             ;;{:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#cac"}
+             ;;{:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aba"}
+             ;;{:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
+             ;; {:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#efe"}
+             ;; {:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#f5f"}
+             {:type :circle :x 100 :y 100 :radius 30 :dx 5 :dy 2 :color "#aaa"}
+             {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0 :dy 0.2 :color "#fff"}             
+             {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0 :dy -0.2 :color "#fff"}
+             {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0.2 :dy 0 :color "#fff"}
+             {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx -0.2 :dy 0 :color "#fff"}             
              ]
             ))
 
@@ -39,10 +42,21 @@
   (.arc context x y radius start-angle end-angle)
   (.stroke context))
 
+ ;; (defn fill-circle-1 [{:keys [x y radius] :or {start-angle 0 end-angle pi-times-2}}]
+ ;;  (.beginPath context)
+ ;;  (.arc context x y radius start-angle end-angle)
+ ;;  (.fill context))
+
 (defn fill-circle [x y radius start-angle end-angle]
   (.beginPath context)
   (.arc context x y radius start-angle end-angle)
   (.fill context))
+
+(defn draw-line [start end]
+  (.beginPath context)
+  (.moveTo context (:x start) (:y start))
+  (.lineTo context (:x end) (:y end))
+  (.stroke context))
 
 (defn draw! [state]
   (do
@@ -51,7 +65,8 @@
       (set! (. context -fillStyle) (:color shape))      
       (condp = (:type shape)
         :rectangle (.fillRect context (:x shape) (:y shape) (:w shape) (:h shape))
-        :circle  (fill-circle (:x shape) (:y shape) (:radius shape) 0 pi-times-2))
+        :circle (fill-circle (:x shape) (:y shape) (:radius shape) 0 pi-times-2)
+        :line (draw-line (:start shape) (:end shape)))
       )
     ))
 
@@ -73,19 +88,36 @@
         )    
     ))
 
+;;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
 (defn out-of-bounds? [shape direction]
-  (condp = direction
-    :horizontal (or (>= (+ (:x shape) (:w shape)) (.-innerWidth js/window)) (<= (:x shape) 0))
-    :vertical   (or (>= (+ (:y shape) (:h shape)) (.-innerHeight js/window)) (<= (:y shape) 0))
+  (condp = (:type shape)
+    :line (or 
+           (or (>= (:x (:end shape)) (.-innerWidth js/window)) (<= (:x (:end shape)) 0))
+           (or (>= (:y (:end shape)) (.-innerHeight js/window)) (<= (:y (:end shape)) 0)))
+    (condp = direction
+      :horizontal (or (>= (+ (:x shape) (:w shape)) (.-innerWidth js/window)) (<= (:x shape) 0))
+      :vertical   (or (>= (+ (:y shape) (:h shape)) (.-innerHeight js/window)) (<= (:y shape) 0))
+      )
     )
   )
-
-(defn update-shape-delta [shape]
+  
+(defn test-delta [shape]
   (if (out-of-bounds? shape :horizontal)
-    (update shape :dx #(- %))
-    (if (out-of-bounds? shape :vertical)
-      (update shape :dy #(- %))
-      shape)))
+    (assoc (assoc shape :dy 0) :dx 0)
+    shape
+    ))
+
+;;ugh clean this ugly shit
+(defn update-shape-delta [shape]
+  (condp = (:type shape)
+    :line (if (out-of-bounds? shape :horizontal)
+      (assoc (assoc shape :dy 0) :dx 0)
+      shape)
+    (if (out-of-bounds? shape :horizontal)
+      (update shape :dx #(- %))
+      (if (out-of-bounds? shape :vertical)
+        (update shape :dy #(- %))
+        shape))))
 
 (defn update-deltas [state]
   (mapv update-shape-delta state))
@@ -96,12 +128,6 @@
 (defn clear! []
   (.clearRect context 0 0 (.-innerWidth js/window) (.-innerHeight js/window)))
 
-;; (defn direction-change-x [state]
-;;   (map (fn [shape] (update shape :dx #(- %))) state))
-
-;; (defn direction-change-y [state]
-;;   (map (fn [shape] (update shape :dy #(- %))) state))
-
 (defn line-distance [start end]
   (let [xs (- (:x end) (:x start))
         ys (- (:y end) (:y start))]
@@ -110,32 +136,6 @@
 (defn update-line-delta! [line state]
   (if (or (>= (:y (:end line)) (.-innerHeight js/window)) (<= (:end line 0)))
     (swap! state (merge (update line :dy #(- %))))))
-
-;; (defn update-rectangle-delta! [rect state]
-;;     (if (or (>= (+ (:x rect) (:w rect)) (.-innerWidth js/window)) (<= (:x rect) 0))
-;;       (swap! state direction-change-x))
-;;     (if (or (>= (+ (:y rect) (:h rect)) (.-innerHeight js/window)) (<= (:y rect) 0))
-;;       (swap! state direction-change-y)))
-
-;; (defn update-deltas! [state]
-;;   (doseq [shape state]
-;;     (condp = (:type shape)
-;;       :rectangle (update-rectangle-delta! shape state)
-;;       :line (update-line-delta! shape state))))
-
-;; (defn old-render! [state]  
-;;   (do
-;;     (clear!)     
-;;     (if (or (>= (+ (:x (first @state)) (:w (first @state))) (.-innerWidth js/window)) (<= (:x (first @state)) 0))
-;;       (swap! state direction-change-x))
-;;     (if (or (>= (+ (:y (first @state)) (:h (first @state))) (.-innerHeight js/window)) (<= (:y (first @state)) 0))
-;;       (swap! state direction-change-y))
-;;     (swap! state updater)
-;;     (draw! @state))
-;;   (.requestAnimationFrame js/window #(render! state))        
-;;     ;;(js/setInterval #(render! state) 5)
-;; )
-
 
 (defn render! [old-state]
   (let [new-state (-> old-state
@@ -148,8 +148,6 @@
 )
 
 (render! @state)
-
-;;(render! state)
 
 (defn on-clek [e]
   (do
