@@ -6,12 +6,12 @@
             [
              ;;{:type :rectangle :x 300 :y 300 :h 400 :w 400 :dx 5 :dy 2 :color "#ccc"}
              ;;{:type :rectangle :x 400 :y 400 :h 200 :w 200 :dx 5 :dy 2 :color "#aaa"}
-             ;;{:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#cac"}
-             ;;{:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aba"}
-             ;;{:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
+             ;; {:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#cac"}
+             ;; {:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aba"}
+             ;; {:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
              ;; {:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#efe"}
              ;; {:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#f5f"}
-             {:type :circle :x 100 :y 100 :radius 30 :dx 5 :dy 2 :color "#aaa"}
+             ;;{:type :circle :x 100 :y 100 :radius 30 :dx 5 :dy 2 :color "#aaa"}
              {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0 :dy 0.2 :color "#fff"}             
              {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0 :dy -0.2 :color "#fff"}
              {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0.2 :dy 0 :color "#fff"}
@@ -149,6 +149,16 @@
 
 (render! @state)
 
+(defn add-lines! [old-state x y]
+  (let [new-state (-> old-state
+                      (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy 1 :color "#fff"})
+                      (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy -1 :color "#fff"})
+                      (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -1 :dy 0 :color "#fff"})
+                      (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 1 :dy 0 :color "#fff"})
+                      )]
+    (reset! state new-state)
+    ))
+
 (defn on-clek [e]
   (do
     ;; (.log js/console (str e))
@@ -157,6 +167,7 @@
     ;; (.log js/console (str "offsetX" e.offsetX))
     ;; (.log js/console (str "offsetY" e.offsetY))
     ;; (.log js/console (str "event X" event.x))
+    (add-lines! @state event.x event.y)    
     (.log js/console (str "event Y" event.y))
     ;;(render! @state)
     ;;(set! (. context -fillStyle) "#fff")          

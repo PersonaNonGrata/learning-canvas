@@ -6508,3 +6508,67 @@ notifying browser that file changed:  /canvas/core.js
 [32mSuccessfully compiled "main.js" in 0.153 seconds.[0m
 notifying browser that file changed:  out/cljs_deps.js
 notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.15 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.159 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.183 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.122 seconds.[0m
+notifying browser that file changed:  out/goog/deps.js
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.259 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.212 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Wrong number of args (3) passed to canvas.core/add-lines! at line 164 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.22 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.215 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.212 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.21 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.208 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.21 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.193 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.189 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.194 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.175 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.17 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.165 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
