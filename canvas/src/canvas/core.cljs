@@ -17,12 +17,23 @@
               ;; {:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
              ;; {:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#efe"}
               ;; {:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#f5f"}
-             ;;{:type :circle :x 100 :y 100 :radius 30 :dx 5 :dy 2 :color "#aaa"}
-              {:type :line :start {:x 200 :y 0} :end {:x 200 :y 5000} :dx 0 :dy 0 :color "#fff"}
-              {:type :line :start {:x 500 :y 0} :end {:x 500 :y 5000} :dx 0 :dy 0 :color "#fff"}
-              {:type :line :start {:x 600 :y 0} :end {:x 600 :y 5000} :dx 0 :dy 0 :color "#fff"}
-              {:type :line :start {:x 800 :y 0} :end {:x 800 :y 5000} :dx 0 :dy 0 :color "#fff"}
-;;              {:type :line :start {:x 0 :y 500} :end {:x 5000 :y 500} :dx 0 :dy 0 :color "#fff"}
+              ;; {:type :circle :x 150 :y 150 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+              ;; {:type :circle :x 250 :y 100 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+              ;; {:type :circle :x 350 :y 450 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+              ;; {:type :circle :x 450 :y 550 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+              ;; {:type :circle :x 450 :y 650 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+              ;; {:type :circle :x 750 :y 350 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+              ;; {:type :line :start {:x 200 :y 0} :end {:x 200 :y 5000} :dx 0 :dy 0 :color "#fff"}
+              ;; {:type :line :start {:x 500 :y 0} :end {:x 500 :y 5000} :dx 0 :dy 0 :color "#fff"}
+              ;; {:type :line :start {:x 450 :y 0} :end {:x 450 :y 5000} :dx 0 :dy 0 :color "#fff"}
+              ;; {:type :line :start {:x 400 :y 0} :end {:x 400 :y 5000} :dx 0 :dy 0 :color "#fff"}
+              ;; {:type :line :start {:x 300 :y 0} :end {:x 300 :y 5000} :dx 0 :dy 0 :color "#fff"}
+              ;; {:type :line :start {:x 800 :y 0} :end {:x 800 :y 5000} :dx 0 :dy 0 :color "#fff"}
+              {:type :line :start {:x 0 :y 300} :end {:x 5000 :y 300} :dx 0 :dy 0 :color "#fff"}
+              {:type :line :start {:x 0 :y 400} :end {:x 5000 :y 400} :dx 0 :dy 0 :color "#fff"}
+              {:type :line :start {:x 0 :y 500} :end {:x 5000 :y 500} :dx 0 :dy 0 :color "#fff"}
+              {:type :line :start {:x 0 :y 600} :end {:x 5000 :y 600} :dx 0 :dy 0 :color "#fff"}
+              {:type :line :start {:x 0 :y 700} :end {:x 5000 :y 700} :dx 0 :dy 0 :color "#fff"}
               ;; {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx 0.2 :dy 0 :color "#fff"}
               ;; {:type :line :start {:x 100 :y 500} :end {:x 100 :y 500} :dx -0.2 :dy 0 :color "#fff"}             
              ]
@@ -109,12 +120,6 @@
     )
   )
 
-(defn test-delta [shape]
-  (if (out-of-bounds? shape :horizontal)
-    (assoc (assoc shape :dy 0) :dx 0)
-    shape
-    ))
-
 ;;ugh clean this ugly shit
 (defn update-shape-delta [shape]
   (condp = (:type shape)
@@ -165,32 +170,18 @@
     (js/setTimeout (fn [] (close! c)) ms)
     c))
 
-(defn hoppla [men]
-  (if (= (count men) 1)
-    nil    
-    (do
-      (go
-        (<! (timeout 1000))
-        (draw! (first men))
-        (<! (timeout 1000))
-        (clear!)            
-        )
-      (recur (rest men)))
-    ))
-
-(defn foreach [f xs] 
-  (doseq [x xs] (f x)))
-
 (defn replay! [] 
-  (let [my @history]
-    (hoppla my)))
+  (doseq [entry @history ]
+    (go
+      (<! (timeout 1000))
+      (draw! entry)
+      (<! (timeout 1000))
+      )))
 
 (defn sr! []
   (do
     (stop!)
     (replay!)))
-
- ;;> (:radius circle) (- (:x (:start line)) (:x circle))
 
 (defn circles-colliding? [c1 c2]
   (let [dx (- (:x c1) (:x c2))
@@ -211,46 +202,32 @@
 
 (defn abs [n] (max n (- n)))
 
-;; (defn circle-collide-with-line? [circle direction line]
-;;   (condp = direction
-;;     :horizontal (<= (abs (- (:x circle) (:radius circle))) (:x (:start line)))
-;;     :vertical (<= (abs (- (:y circle) (:radius circle))) (:y ("start"" line)))))
-
-;; (defn circle-collide-with-line? [circle line]
-;;   (let [rad (- (:x circle) (:radius circle))
-;;         line-start (:x (:start line))]
-;;     (.log js/console (str "rad : " rad))
-;;     (.log js/console (str "ls : " line-start))
-;;     (<= rad (:x (:start line)))))
-
 (defn line-direction [line]
   (if (= (:x (:start line)) (:x (:end line)))
     :horizontal
     :vertical))
 
-(defn circle-collide-with-line? [circle line]
-  (let [dist (abs (- (:x circle) (:x (:start line))))]
-    (if (= (:type line) :circle)
-      false
-      (< dist (:radius circle)))))
-
-;; (defn update-circle-if-collide-with-line [state]
-;;   (for [shape state]
-;;     ))
+(defn circle-collide-with-line? [circle direction line]
+  (let [dist-x (abs (- (:x circle) (:x (:start line))))
+        dist-y (abs (- (:y circle) (:y (:start line))))]
+    (condp = (:type line)      
+      :line (condp = direction 
+              :horizontal (< dist-x (:radius circle))
+              :vertical (< dist-y (:radius circle)))
+      :circle false)))
 
 (defn update-circle-if-collide-with-line [state]
   (for [shape state]
-    (do
-;;      (.log js/console (count (filter (partial circle-collide-with-line? shape) state)))
-      (condp = (:type shape)
-        :circle (if (< 0 (count (filter (partial circle-collide-with-line? shape) state)))                
+    (condp = (:type shape)
+      :circle (if (< 0 (count (filter (partial circle-collide-with-line? shape :horizontal) state)))
+                (-> shape 
+                    (update :dx #(- %)))
+                (if (< 0 (count (filter (partial circle-collide-with-line? shape :vertical) state)))
                   (-> shape 
-                      (update :dx #(- %))
-                      ;;(update :dy #(- %))
-                      )
-                  shape)
-        :line shape
-        ))))
+                      (update :dy #(- %)))
+                  shape))
+      :line shape
+      )))
 
 (defn render! [the-state]
   (if (not (empty? the-state))
@@ -268,16 +245,24 @@
 ;;(.requestAnimationFrame js/window #(render! @state))
 (render! @state)
 
+(defn my-rand []
+  (condp = (rand-int 2)
+    0 -
+    1 +))
+
 (defn add-lines! [old-state x y]
   (let [new-state (-> old-state
-                     ;; (conj {:type :line :start {:x (+ x 50) :y y} :end {:x (+ x 50) :y y} :dx 0 :dy 1 :color  "#fff"})
-                     ;; (conj {:type :line :start {:x (+ x 50) :y y} :end {:x (+ x 50) :y y} :dx 0 :dy -1 :color "#fff"})
-                    ;;  (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -1 :dy 0 :color "#fff"})
-                    ;;  (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 1 :dy 0 :color "#fff"})
+                      ;; (conj {:type :line :start {:x (+ x 50) :y y} :end {:x (+ x 50) :y y} :dx 0 :dy 1 :color  "#fff"})
+                      ;; (conj {:type :line :start {:x (+ x 50) :y y} :end {:x (+ x 50) :y y} :dx 0 :dy -1 :color "#fff"})
+                      ;; (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -1 :dy 0 :color "#fff"})
+                      ;; (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 1 :dy 0 :color "#fff"})
                       ;; (conj {:type :circle :x x :y y :radius 30 :dx 5 :dy 5 :color "#aaa"})
                       ;; (conj {:type :circle :x x :y y :radius 30 :dx -5 :dy -5 :color "#aaa"})
                       ;; (conj {:type :circle :x x :y y :radius 30 :dx 5 :dy -5 :color "#aaa"})
-                      (conj {:type :circle :x x :y y :radius 20 :dx -5 :dy 5 :color "#aaa"})
+                      ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
+                      ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
+                      ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
+                      (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
                       )]
     (reset! state new-state)
     ))

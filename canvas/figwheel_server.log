@@ -8505,3 +8505,562 @@ notifying browser that file changed:  /canvas/core.js
 [32mSuccessfully compiled "main.js" in 0.271 seconds.[0m
 notifying browser that file changed:  out/cljs_deps.js
 notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/dist at line 235 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.295 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.285 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/circle-collide-with-line? at line 246 src/canvas/core.cljs
+WARNING: Use of undeclared Var canvas.core/circle-collide-with-line? at line 246 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.297 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.295 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/circle-collide-with-line? at line 258 src/canvas/core.cljs
+WARNING: Use of undeclared Var canvas.core/circle-collide-with-line? at line 258 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.321 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.272 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.284 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.266 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.295 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.285 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.297 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.284 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.285 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.295 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+Figwheel: focusing on build-ids (dev)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.125 seconds.[0m
+notifying browser that file changed:  out/goog/deps.js
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.402 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.352 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.341 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.364 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.35 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.299 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: EOF while reading, starting at line 258 and column 1 on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 318, column 1
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.282 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.262 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.259 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.298 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+ERROR: EOF while reading, starting at line 255 and column 1 on file /home/persona/Projects/canvas/canvas/src/canvas/core.cljs, line 315, column 1
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.255 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.259 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.403 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.25 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.294 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.25 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.264 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.269 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.252 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.299 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[31mCompiling "main.js" failed.[0m
+clojure.lang.ExceptionInfo: failed compiling file:src/canvas/core.cljs
+ at clojure.core$ex_info.invoke (core.clj:4593)
+    cljs.compiler$compile_file$fn__3102.invoke (compiler.cljc:1254)
+    cljs.compiler$compile_file.invoke (compiler.cljc:1216)
+    cljs.compiler$compile_root.invoke (compiler.cljc:1291)
+    cljs.closure$compile_dir.invoke (closure.clj:438)
+    cljs.closure$eval3545$fn__3546.invoke (closure.clj:478)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    cljs.closure$eval3558$fn__3559.invoke (closure.clj:492)
+    cljs.closure$eval3497$fn__3498$G__3488__3505.invoke (closure.clj:383)
+    clojurescript_build.core.CompilableSourcePaths/fn (core.clj:20)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojurescript_build.core.CompilableSourcePaths._compile (core.clj:19)
+    cljs.closure$build.invoke (closure.clj:1671)
+    clojurescript_build.core$build_source_paths_STAR_.invoke (core.clj:160)
+    figwheel_sidecar.auto_builder$default_build_options$fn__15927.invoke (auto_builder.clj:61)
+    figwheel_sidecar.auto_builder$insert_figwheel_connect_script$fn__15973.invoke (auto_builder.clj:201)
+    figwheel_sidecar.auto_builder$warning$fn__15924.invoke (auto_builder.clj:57)
+    clojurescript_build.auto$time_build$fn__15727.invoke (auto.clj:56)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$after$fn__15733.invoke (auto.clj:65)
+    clojurescript_build.auto$error$fn__15736.invoke (auto.clj:72)
+    clojurescript_build.auto$before$fn__15730.invoke (auto.clj:61)
+    clojurescript_build.auto$make_conditional_builder$fn__15748.invoke (auto.clj:104)
+    clojure.core$mapv$fn__6727.invoke (core.clj:6616)
+    clojure.lang.PersistentVector.reduce (PersistentVector.java:333)
+    clojure.core$reduce.invoke (core.clj:6518)
+    clojure.core$mapv.invoke (core.clj:6616)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835$fn__15840.invoke (auto.clj:187)
+    clojurescript_build.auto$autobuild_STAR_$fn__15834$state_machine__9309__auto____15835.invoke (auto.clj:178)
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.334 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.272 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.31 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.327 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.325 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.314 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.29 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.322 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.308 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.309 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.313 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.327 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.316 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.321 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.317 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.318 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.336 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.384 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.342 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.333 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.336 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.317 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.321 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.317 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.319 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.314 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.32 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.4 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.296 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.287 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/men at line 199 src/canvas/core.cljs
+WARNING: Use of undeclared Var canvas.core/men at line 199 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.41 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+WARNING: Use of undeclared Var canvas.core/v at line 199 src/canvas/core.cljs
+WARNING: Use of undeclared Var canvas.core/v at line 199 src/canvas/core.cljs
+[32mSuccessfully compiled "main.js" in 0.402 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.386 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.36 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.346 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.324 seconds.[0m
+notifying browser that file changed:  out/cljs_deps.js
+notifying browser that file changed:  /canvas/core.js
+[0mCompiling "main.js" from ["src"]...
+[32mSuccessfully compiled "main.js" in 0.315 seconds.[0m
+notifying browser that file changed:  /canvas/core.js
