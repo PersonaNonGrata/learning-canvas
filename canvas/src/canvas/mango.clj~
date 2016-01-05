@@ -1,4 +1,0 @@
-(ns canvas.mango)
-
-(defn update-lines []
-  (str "test"))
