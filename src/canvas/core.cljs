@@ -90,13 +90,6 @@
       )
     ))
 
-(defn updater [state]
-  (->> state       
-       (map (fn [shape] (update shape :x #(+ % (:dx shape)))))
-       (map (fn [shape] (update shape :y #(+ % (:dy shape)))))
-       )
-  )
-
 (defn update-shape-position [shape]
   (condp = (:type shape)
     :line (-> shape
@@ -107,7 +100,9 @@
         (update :y + (:dy shape)))
     ))
 
-;;{:type :line :start {:x 500 :y 500} :end {:x 700 :y 500} :dx 0 :dy 2 :color "#fff"}
+(defn update-positions [state]
+  (mapv update-shape-position state))
+
 (defn out-of-bounds? [shape direction]
   (condp = (:type shape)
     :line (or 
@@ -119,9 +114,6 @@
       )
     )
   )
-
-(defn update-positions [state]
-  (mapv update-shape-position state))
 
 (defn clear! []
   (.clearRect context 0 0 (.-innerWidth js/window) (.-innerHeight js/window)))
@@ -194,6 +186,11 @@
         (update shape :dy #(- %))
         shape))))
 
+(defn where [axis comparer line]
+  (if (comparer (axis (:start line)) (axis (:end line)))
+    (axis (:end line))
+    (axis (:start line))))
+
 (defn highest-x [line]
   (if (< (:x (:start line)) (:x (:end line)))
       (:x (:end line))
@@ -221,8 +218,8 @@
         dist-end-x (abs (- (:x circle) (:x (:end line))))]
     (condp = (:type line)      
       :line (condp = direction 
-              :horizontal (and (< dist-start-x (:radius circle)) (< (:y circle) (highest-y line)) (> (:y circle) (lowest-y line)))
-              :vertical (and (< dist-start-y (:radius circle)) (< (:x circle) (highest-x line)) (> (:x circle) (lowest-x line)))
+              :horizontal (and (< dist-start-x (:radius circle)) (< (:y circle) (where :y < line)) (> (:y circle) (where :y > line)))
+              :vertical (and (< dist-start-y (:radius circle)) (< (:x circle) (where :x < line)) (> (:x circle) (where :x > line)))
               )
       :circle false)))
 
@@ -263,14 +260,14 @@
     0 -
     1 +))
 
-(defn add-lines! [old-state x y]
+(defn add-vertical-lines! [old-state x y]
   (let [new-state (-> old-state
-                       (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy 5 :color  "#fff"})
-                       (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy -5 :color "#fff"})
-                       (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -5 :dy 0 :color "#fff"})
-                       (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 5 :dy 0 :color "#fff"})
-                      ;; (conj {:type :circle :x x :y y :radius 30 :dx 5 :dy 5 :color "#aaa"})
-                      ;; (conj {:type :circle :x x :y y :radius 30 :dx -5 :dy -5 :color "#aaa"})
+                        (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy 5 :color  "#fff"})
+                        (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy -5 :color "#fff"})
+                        ;;(conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -5 :dy 0 :color "#fff"})
+                        ;(conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 5 :dy 0 :color "#fff"})
+                       ;;(conj {:type :circle :x (+ 5  x) :y (+ 5  y) :radius 10 :dx 5 :dy 5 :color "#aaa"})
+                      ; (conj {:type :circle :x x :y y :radius 30 :dx -5 :dy -5 :color "#aaa"})
                       ;; (conj {:type :circle :x x :y y :radius 30 :dx 5 :dy -5 :color "#aaa"})
          ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
          ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
@@ -280,6 +277,24 @@
     (reset! state new-state)
     ))
 
+(defn add-horizontal-lines! [old-state x y]
+  (let [new-state (-> old-state
+                        ;;(conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy 5 :color  "#fff"})
+                        ;;(conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy -5 :color "#fff"})
+                        (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -5 :dy 0 :color "#fff"})
+                        (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 5 :dy 0 :color "#fff"})
+                       ;;(conj {:type :circle :x (+ 5  x) :y (+ 5  y) :radius 10 :dx 5 :dy 5 :color "#aaa"})
+                      ; (conj {:type :circle :x x :y y :radius 30 :dx -5 :dy -5 :color "#aaa"})
+                      ;; (conj {:type :circle :x x :y y :radius 30 :dx 5 :dy -5 :color "#aaa"})
+         ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
+         ;; (conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
+          ;;(conj {:type :circle :x x :y y :radius 10 :dx 5 :dy 5 :color "#aaa"})
+         ;;(conj {:type :circle :x x :y y :radius 10 :dx ((my-rand) (rand-int 5) (rand-int 5)) :dy ((my-rand) (rand-int 5) (rand-int 5)) :color "#aaa"})
+                      )]
+    (reset! state new-state)
+    ))
+
+
 (defn on-click [e]
   (do
     ;; (.log js/console (str e))
@@ -288,12 +303,17 @@
     ;; (.log js/console (str "offsetX" e.offsetX))
     ;; (.log js/console (str "offsetY" e.offsetY))
     ;; (.log js/console (str "event X" event.x))
-    (add-lines! @state event.x event.y)    
+    (if (= event.button 0)
+      (add-vertical-lines! @state event.x event.y)
+      (add-horizontal-lines! @state event.x event.y)
+      )                  
     (.log js/console (str "event Y" event.y))
+    (.log js/console e))
     ;;(render! @state)
     ;;(set! (. context -fillStyle) "#fff")          
     ;;(set! (. context -fillStyle) "#fff")
     ;;(.fillRect context (- event.x 15) (- event.y 15) 10 10)
-    ))
+)
+    
 
 (events/listen js/window event-type/CLICK on-click)
