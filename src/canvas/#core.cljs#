@@ -62,6 +62,11 @@
   (.arc context x y radius start-angle end-angle)
   (.stroke context))
 
+ ;; (defn fill-circle-1 [{:keys [x y radius] :or {start-angle 0 end-angle pi-times-2}}]
+ ;;  (.beginPath context)
+ ;;  (.arc context x y radius start-angle end-angle)
+ ;;  (.fill context))
+
 (defn fill-circle [x y radius start-angle end-angle]
   (.beginPath context)
   (.arc context x y radius start-angle end-angle)
@@ -117,6 +122,10 @@
   (let [xs (- (:x end) (:x start))
         ys (- (:y end) (:y start))]
     (Math/sqrt (+ (* xs xs) (* ys ys)))))
+
+(defn update-line-delta! [line state]
+  (if (or (>= (:y (:end line)) (.-innerHeight js/window)) (<= (:end line 0)))
+    (swap! state (merge (update line :dy #(- %))))))
 
 (defn stop! []
   (do 
@@ -209,29 +218,59 @@
         dist-end-x (abs (- (:x circle) (:x (:end line))))]
     (condp = (:type line)      
       :line (condp = direction 
-              :horizontal (and (< dist-start-x (:radius circle)) (< (:y circle) (highest-y line)) (> (:y circle) (lowest-y line)))
-              :vertical (and (< dist-start-y (:radius circle)) (< (:x circle) (highest-x line)) (> (:x circle) (lowest-x line)))
+              :horizontal (and (< dist-start-x (:radius circle)) (< (:y circle) (where :y < line)) (> (:y circle) (where :y > line)))
+              :vertical (and (< dist-start-y (:radius circle)) (< (:x circle) (where :x < line)) (> (:x circle) (where :x > line)))
               )
       :circle false)))
 
-(defn update-circle-if-collide-with-line [state]
-  (for [shape state]
-    (condp = (:type shape)
-      :circle (if  (some (partial circle-collide-with-line? shape :horizontal) state)
-                  (-> shape 
-                    (update :dx #(- %)))
-                (if (some (partial circle-collide-with-line? shape :vertical) state)
+(defn meh [shape state]
+  )
 
-                  (-> shape 
-                      (update :dy #(- %)))
-                  shape))
-      :line shape
-      )))
+(defn update-circle-if-collide-with-line [state]
+  (mapv (partial (fn [state shape] (condp = (:type shape)
+                                     :circle (if  (some (partial circle-collide-with-line? shape :horizontal) state)
+                                               (-> shape 
+                                                   (update :dx #(- %)))
+                                               (if (some (partial circle-collide-with-line? shape :vertical) state)
+                                                 (-> shape 
+                                                     (update :dy #(- %)))
+                                                 shape))
+                                     :line shape
+                                     )) ) state)
+  )
+
+
+;; (defn update-circle-if-collide-with-line [state]
+;;   (for [shape state]
+;;     (condp = (:type shape)
+;;       :circle (if  (some (partial circle-collide-with-line? shape :horizontal) state)
+;;                   (-> shape 
+;;                     (update :dx #(- %)))
+;;                 (if (some (partial circle-collide-with-line? shape :vertical) state)
+;;                   (-> shape 
+;;                       (update :dy #(- %)))
+;;                   shape))
+;;       :line shape
+;;       )))
+
+
+;; (defn update-circle-if-collide-with-line [state]
+;;   (for [shape state]
+;;     (condp = (:type shape)
+;;       :circle (if (< 0 (count (filter (partial circle-collide-with-line? shape :horizontal) state)))
+;;                 (-> shape 
+;;                     (update :dx #(- %)))
+;;                 (if (< 0 (count (filter (partial circle-collide-with-line? shape :vertical) state)))
+;;                   (-> shape 
+;;                       (update :dy #(- %)))
+;;                   shape))
+;;       :line shape
+;;       )))
 
 (defn update-deltas [state]
   (->> state
       (mapv update-shape-delta-if-out-of-bounds)
-      (update-circle-delta)
+      ;;(update-circle-delta)
       (update-circle-if-collide-with-line)
       ))
 
@@ -255,8 +294,8 @@
 
 (defn add-vertical-lines! [old-state x y]
   (let [new-state (-> old-state
-                        (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy 5 :color  "#fff"})
-                        (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy -5 :color "#fff"})
+                       ;; (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy 5 :color  "#fff"})
+                       ;; (conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 0 :dy -5 :color "#fff"})
                         ;;(conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx -5 :dy 0 :color "#fff"})
                         ;(conj {:type :line :start {:x x :y y} :end {:x x :y y} :dx 5 :dy 0 :color "#fff"})
                        (conj {:type :circle :x (+ 5  x) :y (+ 5  y) :radius 10 :dx 5 :dy 5 :color "#aaa"})
@@ -296,11 +335,12 @@
     ;; (.log js/console (str "offsetX" e.offsetX))
     ;; (.log js/console (str "offsetY" e.offsetY))
     ;; (.log js/console (str "event X" event.x))
-    (add-vertical-lines! @state e.clientX e.clientY)
-    ;;(add-horizontal-lines! @state e.event_.x e.event_.y)
-                        
-    ;;(.log js/console e.event_.y)
-    )
+    (if (= event.button 0)
+      (add-vertical-lines! @state event.x event.y)
+      (add-horizontal-lines! @state event.x event.y)
+      )                  
+    (.log js/console (str "event Y" event.y))
+    (.log js/console e))
     ;;(render! @state)
     ;;(set! (. context -fillStyle) "#fff")          
     ;;(set! (. context -fillStyle) "#fff")
