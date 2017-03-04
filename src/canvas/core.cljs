@@ -10,23 +10,28 @@
 
 (def state (atom 
             [
-             ;;{:type :rectangle :x 300 :y 300 :h 400 :w 400 :dx 5 :dy 2 :color "#ccc"}
-             ;;{:type :rectangle :x 400 :y 400 :h 200 :w 200 :dx 5 :dy 2 :color "#aaa"}
+           ;;{:type :rectangle :x 300 :y 300 :h 400 :w 400 :dx 0 :dy 0 :color "#ccc"}
+             ;{:type :rectangle :x 400 :y 400 :h 200 :w 200 :dx 5 :dy 2 :color "#aaa"}
               ;; {:type :rectangle :x 450 :y 450 :h 100 :w 100 :dx 5 :dy 2 :color "#cac"}
               ;; {:type :rectangle :x 300 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#aba"}
               ;; {:type :rectangle :x 600 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#b3b"}
              ;; {:type :rectangle :x 600 :y 300 :h 100 :w 100 :dx 5 :dy 2 :color "#efe"}
               ;; {:type :rectangle :x 300 :y 600 :h 100 :w 100 :dx 5 :dy 2 :color "#f5f"}
-               {:type :circle :x 150 :y 150 :radius 10 :dx 5 :dy 2 :color "#aaa"}
-               {:type :circle :x 250 :y 100 :radius 10 :dx 5 :dy 2 :color "#aaa"}             
-              ;; {:type :circle :x 450 :y 550 :radius 10 :dx 5 :dy 2 :color "#aaa"}
-              ;;{:type :circle :x 450 :y 650 :radius 10 :dx 5 :dy 2 :color "#aaa"}
-              ;; {:type :circle :x 750 :y 350 :radius 10 :dx 5 :dy 2 :color "#aaa"}
-               ;; {:type :line :start {:x 200 :y 0} :end {:x 200 :y 5000} :dx 0 :dy 0 :color "#fff"}
+             ;;{:type :circle :x 150 :y 150 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+             ;;{:type :circle :x 250 :y 100 :radius 10 :dx 5 :dy 3 :color "#aaa"}             
+             ;; {:type :circle :x 450 :y 550 :radius 10 :dx 2 :dy 4 :color "#afa"}
+             ;; {:type :circle :x 450 :y 650 :radius 10 :dx 4 :dy 5 :color "#aba"}
+             ;; {:type :circle :x 250 :y 350 :radius 10 :dx 5 :dy 2 :color "#aaa"}
+             ;; {:type :circle :x 150 :y 350 :radius 10 :dx 3 :dy 3 :color "#aca"}
+                {:type :circle :x 500 :y 500 :radius 20 :dx 3 :dy 3 :color "#aac"}
+                {:type :line :start {:x 200 :y 400} :end {:x 200 :y 800} :dx 0 :dy 0 :color "#fff"}
+                {:type :line :start {:x 600 :y 400} :end {:x 600 :y 800} :dx 0 :dy 0 :color "#fff"}
+                {:type :line :start {:x 200 :y 400} :end {:x 600 :y 400} :dx 0 :dy 0 :color "#fff"}
+                {:type :line :start {:x 200 :y 800} :end {:x 600 :y 800} :dx 0 :dy 0 :color "#fff"}
                ;; {:type :line :start {:x 500 :y 0} :end {:x 500 :y 5000} :dx 0 :dy 0 :color "#fff"}
-               ;; {:type :line :start {:x 450 :y 0} :end {:x 450 :y 5000} :dx 0 :dy 0 :color "#fff"}
-              {:type :line :start {:x 550 :y 400} :end {:x 550 :y 900} :dx 0 :dy 0 :color "#fff"}
-              {:type :line :start {:x 300 :y 650} :end {:x 800 :y 650} :dx 0 :dy 0 :color "#fff"}
+  ;;              {:type :line :start {:x 450 :y 0} :end {:x 450 :y 5000} :dx 0 :dy 0 :color "#fff"}
+;;             {:type :line :start {:x 550 :y 400} :end {:x 550 :y 900} :dx 0 :dy 0 :color "#fff"}
+  ;;           {:type :line :start {:x 300 :y 650} :end {:x 800 :y 650} :dx 0 :dy 0 :color "#fff"}
              ;; {:type :line :start {:x 800 :y 0} :end {:x 800 :y 5000} :dx 0 :dy 0 :color "#fff"}
              ;; {:type :line :start {:x 0 :y 300} :end {:x 5000 :y 300} :dx 0 :dy 0 :color "#fff"}
             ;;  {:type :circle :x 350 :y 450 :radius 10 :dx 5 :dy 2 :color "#aaa"}
@@ -231,8 +236,8 @@
 (defn update-deltas [state]
   (->> state
       (mapv update-shape-delta-if-out-of-bounds)
-      (update-circle-delta)
-      (update-circle-if-collide-with-line)
+      ;;(update-circle-delta)
+      ;;(update-circle-if-collide-with-line)
       ))
 
 (defn render! [the-state]
@@ -287,16 +292,30 @@
     (reset! state new-state)
     ))
 
+(defn add-line [old-state p1 p2]
+  (let [new-state (-> old-state
+                      (conj {:type :line :start {:x (:x p1) :y (:y p1) } :end {:x (:x p2) :y (:y p2)} :dx 0 :dy 0 :color  "#fff"}))]
+    (reset! state new-state)
+))
+
+(defn hit-circle [click state]
+  (do
+    (.log js/console (:x click) (:y click) (:x (first state)) (:y (first state)))
+    (add-line state click (first state))
+    )
+  ;;(.log js/console (str "Distance " (line-distance click (first state))))  
+  )
 
 (defn on-click [e]
   (do
+    (hit-circle {:x e.clientX :y e.clientY} @state)
     ;; (.log js/console (str e))
     ;; (.log js/console (str "screenX" e.screenX))
     ;; (.log js/console (str "screenY" e.screenY))
     ;; (.log js/console (str "offsetX" e.offsetX))
     ;; (.log js/console (str "offsetY" e.offsetY))
     ;; (.log js/console (str "event X" event.x))
-    (add-vertical-lines! @state e.clientX e.clientY)
+    ;;(add-vertical-lines! @state e.clientX e.clientY)
     ;;(add-horizontal-lines! @state e.event_.x e.event_.y)
                         
     ;;(.log js/console e.event_.y)
